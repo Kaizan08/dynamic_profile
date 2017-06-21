@@ -4,17 +4,13 @@
         <title></title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="./main.css" rel="stylesheet">
+        <link href="../main.css" rel="stylesheet">
     </head>
-    <body>
-        <div class="profile_section">
+    <body class="users">
+        <div class="profile_side">
             {{#data}}
             <div class="user">
                 <img src="{{avatar}}" class="user_image">
-                {{#education}}
-                <h4>Education<h4>
-                {{/education}}
-                <h4>Skills</h4>
             </div>
             <div class="user_details">
                 <h1>{{name}}</h1>
@@ -40,11 +36,18 @@
                     {{/address}}
                 </p>
                 <p>{{email}} | {{phone}}</p>
-                <section class="ed_skills">
+            </div>
+            <div class="bottom">
+                {{#university}}
+                <h4>Education</h4>
+                {{/university}}
+                <h4>Skills</h4>
+            </div>
+            <section class="ed_skills">
                     <p>
-                    {{#education}}
+                    {{#university}}
                         {{.}}
-                    {{/education}}
+                    {{/university}}
                     {{#skills}}
                         <ul>
                             <li>{{.}}</li>
@@ -53,7 +56,6 @@
                     </p>
                 </section>
             {{/data}}
-            </div>
         </div>
     </body>
 </html>
